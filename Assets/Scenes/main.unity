@@ -2933,7 +2933,7 @@ Prefab:
     - target: {fileID: 114373118859701140, guid: 1ae4b4b46693f664194ab5dad39e437b,
         type: 2}
       propertyPath: IsPlayerControlled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1191797895046520, guid: 1ae4b4b46693f664194ab5dad39e437b, type: 2}
       propertyPath: m_IsActive
@@ -4484,6 +4484,10 @@ Prefab:
         type: 2}
       propertyPath: TotalTireGripFront
       value: 3.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786401949063596, guid: 1ae4b4b46693f664194ab5dad39e437b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ae4b4b46693f664194ab5dad39e437b, type: 2}

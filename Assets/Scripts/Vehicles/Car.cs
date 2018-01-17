@@ -235,7 +235,7 @@ public class Car : MonoBehaviour {
 		CenterOfGravity.transform.localPosition = Vector2.Lerp (CenterOfGravity.transform.localPosition, pos, 0.1f);
 
 		// Skidmarks
-        /*
+        // This doesn't work on the new verison of Unity.
 		if (Mathf.Abs (LocalAcceleration.y) > 18 || EBrake == 1) {
 			AxleRear.TireRight.SetTrailActive (true);
 			AxleRear.TireLeft.SetTrailActive (true);
@@ -243,7 +243,7 @@ public class Car : MonoBehaviour {
 			AxleRear.TireRight.SetTrailActive (false);
 			AxleRear.TireLeft.SetTrailActive (false);
 		}
-        */
+        
 
 		// Automatic transmission
 		Engine.UpdateAutomaticTransmission (Rigidbody2D);
