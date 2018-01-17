@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
         if(Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 10; // select distance = 10 units from the camera
+            mousePos.z = -Camera.main.transform.position.z; // select distance = 10 units from the camera
             Vector2 direction = Camera.main.ScreenToWorldPoint(mousePos) - transform.position;
             RaycastHit2D hit = Physics2D.Raycast(fireSpot.transform.position, direction, 500f);
             Debug.DrawRay(fireSpot.transform.position, direction, Color.green, 1f);

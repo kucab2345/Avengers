@@ -11,11 +11,11 @@ public class Brakelights : MonoBehaviour {
 	void Start () {
         tailLight = GetComponent<Light>();
         originalIntensity = tailLight.intensity;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (transform.root.gameObject.GetComponent<CarDriveable>().Throttle < 0)
         {
             tailLight.intensity = originalIntensity;
         }

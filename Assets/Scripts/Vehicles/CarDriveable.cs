@@ -107,9 +107,9 @@ public class CarDriveable : MonoBehaviour {
     Vector2 LocalVelocity;
     Vector2 LocalAcceleration;
 
-    float Throttle;
-    float Brake;
-    float EBrake;
+    public float Throttle { get; set; }
+    public float Brake { get; set; }
+    public float EBrake { get; set; }
 
     Rigidbody2D Rigidbody2D;
 
