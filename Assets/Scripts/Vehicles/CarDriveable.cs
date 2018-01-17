@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -118,6 +119,7 @@ public class CarDriveable : MonoBehaviour {
 
     GameObject CenterOfGravity;
     GameObject CameraView;
+    GameObject driverEntry;
 
     void Awake()
     {
@@ -164,18 +166,20 @@ public class CarDriveable : MonoBehaviour {
 
         TrackWidth = Mathf.Abs(AxleRear.TireLeft.transform.position.x - AxleRear.TireRight.transform.position.x);
     }
-
     void Update()
     {
 
         if (IsPlayerControlled)
         {
-
             // Handle Input
             Throttle = 0;
             Brake = 0;
             EBrake = 0;
-            
+            if (Input.GetKeyDown("f"))
+            {
+                IsPlayerControlled = false;
+                ExitVehicle();
+            }
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 Throttle = 1;
@@ -478,5 +482,22 @@ public class CarDriveable : MonoBehaviour {
     void PlayerControllingVehicle()
     {
         IsPlayerControlled = true;
+
+        //Link the driverEntry point
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            if (this.transform.GetChild(i).name == "DriverEntry")
+            {
+                driverEntry = this.transform.GetChild(i).gameObject;
+            }
+        }
+    }
+    void ExitVehicle()
+    {
+        GameObject occupant = driverEntry.GetComponent<EnterVehicle>().occupant;
+        occupant.transform.gameObject.SetActive(true);
+        occupant.transform.SetParent(null);
+        occupant.transform.position = driverEntry.transform.position;
+        Camera.main.GetComponent<CameraSlerpPlayer>().player = occupant;
     }
 }

@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnterVehicle : MonoBehaviour {
-    
-    public GameObject occupant = null;
+
+    public GameObject occupant { get; set; }
 
     private bool driver = false;
+
+    void Start()
+    {
+        occupant = null;
+    }
 
     private void OnTriggerStay2D(Collider2D collider)
     {
