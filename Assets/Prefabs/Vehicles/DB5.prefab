@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 61291887227251674}
   - component: {fileID: 212439900027795780}
   - component: {fileID: 114871355469687916}
+  - component: {fileID: 114446999043412264}
   m_Layer: 8
   m_Name: DB5
   m_TagString: Untagged
@@ -833,6 +834,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Radius: 0.5
+--- !u!114 &114446999043412264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786401949063596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cab0c97fad29484dbbafc89fc29dfe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayerControlled: 0
+  CGHeight: 0.55
+  InertiaScale: 1
+  BrakePower: 12000
+  EBrakePower: 5000
+  WeightTransfer: 0.35
+  MaxSteerAngle: 0.75
+  CornerStiffnessFront: 5
+  CornerStiffnessRear: 5.2
+  AirResistance: 2.5
+  RollingResistance: 8
+  EBrakeGripRatioFront: 0.9
+  TotalTireGripFront: 2.5
+  EBrakeGripRatioRear: 0.4
+  TotalTireGripRear: 2.5
+  SteerSpeed: 2.5
+  SteerAdjustSpeed: 1
+  SpeedSteerCorrection: 300
+  SpeedTurningStability: 10
+  AxleDistanceCorrection: 2
 --- !u!114 &114452379203096108
 MonoBehaviour:
   m_ObjectHideFlags: 1
